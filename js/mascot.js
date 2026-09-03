@@ -29,6 +29,9 @@ function buildRabbitMarkup(pose) {
 <svg class="rabbit rabbit--${pose}" viewBox="0 0 200 200" role="img" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <ellipse class="rabbit-shadow" cx="100" cy="180" rx="46" ry="8" fill="var(--color-bg-mid)" opacity="0.6"></ellipse>
   <g class="rabbit-body-wrap">
+    <g transform="translate(138,152)">
+      <circle class="rabbit-tail" cx="0" cy="0" r="10" fill="var(--color-white)" stroke="var(--color-text-primary)" stroke-width="2.5"></circle>
+    </g>
     <ellipse class="rabbit-body" cx="100" cy="142" rx="44" ry="38" fill="var(--color-white)" stroke="var(--color-text-primary)" stroke-width="3"></ellipse>
     <g transform="translate(88,58) rotate(-10)">
       <g class="rabbit-ear-left">
