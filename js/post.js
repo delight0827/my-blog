@@ -1,6 +1,7 @@
 import { getManifest } from './manifest.js';
 import { loadMarkdown } from './markdown.js';
 import { mountRabbits, initBackToTop } from './mascot.js';
+import { categoryIcon, postCategory } from './categories.js';
 
 function formatDate(iso) {
   return new Date(iso).toLocaleDateString('ko-KR', {
@@ -46,9 +47,9 @@ async function init() {
     document.title = `${post.title} · 토끼 블로그`;
 
     const meta = document.getElementById('post-meta');
-    const tag = post.tags && post.tags[0];
+    const category = postCategory(post);
     meta.innerHTML = `
-      ${tag ? `<span class="post-meta__tag">${tag}</span>` : ''}
+      <a class="post-meta__tag" href="index.html?category=${encodeURIComponent(category)}">${categoryIcon(category)} ${category}</a>
       <h1 class="post-meta__title">${post.title}</h1>
       <time class="post-meta__date" datetime="${post.date}">${formatDate(post.date)}</time>
     `;
