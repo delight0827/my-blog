@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>토끼 블로그</title>
+<meta name="description" content="작은 토끼 한 마리가 안내하는 일상 기록 블로그">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/mascot.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-logo" href="index.html">🐇 토끼 블로그</a>
+  </div>
+</header>
+
+<section class="hero container">
+  <div class="hero__rabbit" data-rabbit="hero"></div>
+  <h1 class="hero__title">천천히, 그러나 꾸준히</h1>
+  <p class="hero__tagline">작은 토끼 한 마리가 안내하는 일상 기록 블로그입니다.</p>
+</section>
+
+<div class="scroll-hint" id="scroll-hint">
+  <div data-rabbit="hint"></div>
+  <span>아래로 스크롤해보세요</span>
+</div>
+
+<main class="post-list-section container">
+  <ul class="post-list" id="post-list" aria-live="polite"></ul>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__rabbit" data-rabbit="footer"></div>
+    <p class="site-footer__note">다음에 또 만나요!</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
+<script type="module" src="js/home.js"></script>
+</body>
+</html>

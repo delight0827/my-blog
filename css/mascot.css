@@ -1,0 +1,247 @@
+/* rabbit mascot: shared SVG structure, sized/animated per pose */
+
+.rabbit {
+  display: block;
+  overflow: visible;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rabbit--hero {
+  width: 140px;
+  height: 140px;
+}
+
+@media (min-width: 1024px) {
+  .rabbit--hero {
+    width: 168px;
+    height: 168px;
+  }
+}
+
+.rabbit--hint {
+  width: 46px;
+  height: 46px;
+}
+
+.rabbit--loading {
+  width: 92px;
+  height: 92px;
+}
+
+.rabbit--404 {
+  width: 132px;
+  height: 132px;
+}
+
+.rabbit--back-to-top {
+  width: 100%;
+  height: 100%;
+}
+
+.rabbit--footer {
+  width: 56px;
+  height: 56px;
+}
+
+/* animation anchor points */
+
+.rabbit-ear-left,
+.rabbit-ear-right {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+
+.rabbit-arm-left,
+.rabbit-arm-right {
+  transform-box: fill-box;
+  transform-origin: 50% 0%;
+}
+
+.rabbit-body-wrap {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+
+.rabbit-question {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
+
+/* keyframes */
+
+@keyframes rabbit-ear-wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes rabbit-wave {
+  0%,
+  100% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-25deg);
+  }
+}
+
+@keyframes rabbit-hop {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes rabbit-hop-burst {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-14px);
+  }
+  60% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes rabbit-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes rabbit-point-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes rabbit-question-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+}
+
+/* hero: greeter — waves, ears wiggle, gentle float */
+
+.rabbit--hero .rabbit-ear-left {
+  animation: rabbit-ear-wiggle 2.6s ease-in-out infinite;
+}
+
+.rabbit--hero .rabbit-ear-right {
+  animation: rabbit-ear-wiggle 2.6s ease-in-out infinite;
+  animation-delay: 0.35s;
+}
+
+.rabbit--hero .rabbit-arm-right {
+  animation: rabbit-wave 1.7s ease-in-out infinite;
+}
+
+.rabbit--hero .rabbit-body-wrap {
+  animation: rabbit-float 3.6s ease-in-out infinite;
+}
+
+/* hint: points down toward the post list, with a small bounce */
+
+.rabbit--hint .rabbit-arm-right {
+  animation: rabbit-point-bounce 1.4s ease-in-out infinite;
+}
+
+.rabbit--hint .rabbit-ear-left {
+  animation: rabbit-ear-wiggle 3s ease-in-out infinite;
+}
+
+.rabbit--hint .rabbit-ear-right {
+  animation: rabbit-ear-wiggle 3s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+/* loading / empty state: reading, ears twitching */
+
+.rabbit--loading .rabbit-ear-left {
+  animation: rabbit-ear-wiggle 1.8s ease-in-out infinite;
+}
+
+.rabbit--loading .rabbit-ear-right {
+  animation: rabbit-ear-wiggle 1.8s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+.rabbit--loading .rabbit-body-wrap {
+  animation: rabbit-float 2.4s ease-in-out infinite;
+}
+
+/* 404: confused — one ear droops (static), floating question mark */
+
+.rabbit--404 .rabbit-ear-left {
+  transform: rotate(34deg);
+}
+
+.rabbit--404 .rabbit-question {
+  animation: rabbit-question-bob 1.6s ease-in-out infinite;
+}
+
+/* back to top: hops while visible, bigger hop burst on click */
+
+.rabbit--back-to-top .rabbit-ear-left {
+  animation: rabbit-ear-wiggle 1.1s ease-in-out infinite;
+}
+
+.rabbit--back-to-top .rabbit-ear-right {
+  animation: rabbit-ear-wiggle 1.1s ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+
+.back-to-top.is-visible .rabbit--back-to-top .rabbit-body-wrap {
+  animation: rabbit-hop 0.9s ease-in-out infinite;
+}
+
+.back-to-top.is-hopping .rabbit--back-to-top .rabbit-body-wrap {
+  animation: rabbit-hop-burst 0.5s ease-out;
+}
+
+/* footer: slow sign-off wave */
+
+.rabbit--footer .rabbit-arm-right {
+  animation: rabbit-wave 2.6s ease-in-out infinite;
+}
+
+.rabbit--footer .rabbit-ear-left {
+  animation: rabbit-ear-wiggle 3.4s ease-in-out infinite;
+}
+
+.rabbit--footer .rabbit-ear-right {
+  animation: rabbit-ear-wiggle 3.4s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rabbit * {
+    animation: none !important;
+  }
+}

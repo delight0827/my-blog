@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>글 보기 · 토끼 블로그</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/mascot.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-logo" href="index.html">🐇 토끼 블로그</a>
+  </div>
+</header>
+
+<main class="post-detail container">
+  <div id="post-meta" class="post-meta"></div>
+  <article id="post-content" class="post-content"></article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__rabbit" data-rabbit="footer"></div>
+    <p class="site-footer__note">다음에 또 만나요!</p>
+  </div>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="맨 위로 이동">
+  <span data-rabbit="back-to-top"></span>
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
+<script type="module" src="js/post.js"></script>
+</body>
+</html>
