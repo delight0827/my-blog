@@ -44,6 +44,12 @@
   height: 56px;
 }
 
+.rabbit--banner {
+  width: 52px;
+  height: 52px;
+  flex: none;
+}
+
 /* animation anchor points */
 
 .rabbit-ear-left,
@@ -314,6 +320,29 @@
 
 .rabbit--footer .rabbit-tail {
   animation: rabbit-tail-wiggle 1.8s ease-in-out infinite;
+}
+
+/* banner: greeter at the very top — energetic wave */
+
+.rabbit--banner .rabbit-arm-right {
+  animation: rabbit-wave 1.4s ease-in-out infinite;
+}
+
+.rabbit--banner .rabbit-ear-left {
+  animation: rabbit-ear-wiggle 2.2s ease-in-out infinite;
+}
+
+.rabbit--banner .rabbit-ear-right {
+  animation: rabbit-ear-wiggle 2.2s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+.rabbit--banner .rabbit-body-wrap {
+  animation: rabbit-float 2.6s ease-in-out infinite;
+}
+
+.rabbit--banner .rabbit-tail {
+  animation: rabbit-tail-wiggle 1s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -2,6 +2,7 @@ import { getManifest } from './manifest.js';
 import { loadMarkdown } from './markdown.js';
 import { mountRabbits, initBackToTop } from './mascot.js';
 import { categoryIcon, postCategory } from './categories.js';
+import { initBanner } from './banner.js';
 
 function formatDate(iso) {
   return new Date(iso).toLocaleDateString('ko-KR', {
@@ -28,6 +29,7 @@ function renderNotFound() {
 
 async function init() {
   mountRabbits();
+  initBanner();
   initBackToTop('#back-to-top');
 
   const slug = new URLSearchParams(window.location.search).get('slug');

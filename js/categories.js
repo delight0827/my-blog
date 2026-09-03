@@ -7,6 +7,7 @@ const CATEGORY_ICONS = {
   '내 일상': '☀️',
   '메모': '📝',
   '소개': '💬',
+  '영어': '🔤',
 };
 
 const DEFAULT_ICON = '🐾';

@@ -1,6 +1,7 @@
 import { getManifest } from './manifest.js';
 import { mountRabbits, initScrollHint } from './mascot.js';
 import { categoryIcon, postCategory } from './categories.js';
+import { initBanner } from './banner.js';
 
 const ALL_KEY = '전체';
 
@@ -69,6 +70,7 @@ function renderCategoryNav(nav, categories, activeCategory, onSelect) {
 
 async function init() {
   mountRabbits();
+  initBanner();
   initScrollHint('.hero', '#scroll-hint');
 
   const list = document.getElementById('post-list');
